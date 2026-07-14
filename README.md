@@ -80,7 +80,24 @@ binaries came from, are in [FFMPEG_BUILD_INFO.txt](FFMPEG_BUILD_INFO.txt).
 ## Licensing
 
 MediaGrabber is released under the **MIT License** — see [LICENSE](LICENSE).
+
 Third-party components are listed in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt).
+The full FFmpeg LGPL v3 text is in [FFmpeg-LICENSE-LGPLv3.txt](FFmpeg-LICENSE-LGPLv3.txt),
+and the bundled build's provenance and source information are in
+[FFMPEG_BUILD_INFO.txt](FFMPEG_BUILD_INFO.txt). The same material ships inside both
+packages.
+
+## Release history
+
+**v1.0.1 — Current release**
+
+Updates the bundled FFmpeg distribution and adds complete third-party licensing,
+notices, source information, and updated checksums.
+
+**v1.0.0 — Superseded**
+
+The original release has been withdrawn and replaced by v1.0.1. Please use the current
+release.
 
 ## Responsible use
 
@@ -91,14 +108,6 @@ copyright law and with the terms of the services you access.
 MediaGrabber does not bypass access controls and does not support DRM-protected
 streams. Sign-in-required, region-locked, or bot-blocked content cannot be
 circumvented.
-
-## Release history
-
-**v1.0.0 was withdrawn** and is not available for download. It bundled a GPL FFmpeg
-build whose exact corresponding source could not afterwards be established, and it
-shipped without the required licence text and source offer. v1.0.1 replaces it with
-the pinned LGPL build described above, shipped with its full licence text and
-corresponding source. Please use v1.0.1.
 
 ## Links
 
