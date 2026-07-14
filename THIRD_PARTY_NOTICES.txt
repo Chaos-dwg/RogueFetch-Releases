@@ -1,9 +1,9 @@
-MediaGrabber - Third-Party Notices
+RogueFetch - Third-Party Notices
 ==================================
 
-MediaGrabber is licensed under the MIT License. See LICENSE.
+RogueFetch is licensed under the MIT License. See LICENSE.
 
-MediaGrabber redistributes the third-party components listed below. Each remains
+RogueFetch redistributes the third-party components listed below. Each remains
 under its own licence. Full licence texts for the redistributed binaries are in
 the "legal" folder that ships with the application.
 
@@ -25,18 +25,18 @@ components (libx264, libx265, libxvid, libxavs2, libdavs2, frei0r,
 librubberband, libvidstab, avisynth) are disabled. It is configured with
 --enable-version3, which makes the applicable licence LGPL version 3.
 
-The FFmpeg binaries are UNMODIFIED. MediaGrabber runs ffmpeg.exe as a separate
+The FFmpeg binaries are UNMODIFIED. RogueFetch runs ffmpeg.exe as a separate
 process and does not link any FFmpeg library into itself.
 
 The FFmpeg libraries are shipped as separate DLLs (a "shared" build), so you can
 replace them with your own build simply by swapping the files in the bin folder.
-No relinking of MediaGrabber is required.
+No relinking of RogueFetch is required.
 
 Corresponding source, and the build scripts and configuration used to produce
-these binaries, are published as assets on the MediaGrabber release that ships
+these binaries, are published as assets on the RogueFetch release that ships
 this build:
 
-  https://github.com/Chaos-dwg/MediaGrabber-Releases/releases
+  https://github.com/Chaos-dwg/RogueFetch-Releases/releases
 
 and upstream at:
 
@@ -64,7 +64,7 @@ Copyright : Copyright (c) The Qt Company Ltd.
 
 PySide6 and the Qt libraries are used as dynamically-linked libraries and are
 shipped as separate DLLs, consistent with the LGPL. They can be replaced with
-compatible versions without relinking MediaGrabber.
+compatible versions without relinking RogueFetch.
 
 
 4. Requests
@@ -83,5 +83,5 @@ brotli (MIT). Consult each project for its full licence text.
 
 6. Application icon
 -------------------
-The MediaGrabber icon is generated programmatically by the project's own build
-script and is covered by MediaGrabber's MIT licence.
+The RogueFetch icon is generated programmatically by the project's own build
+script and is covered by RogueFetch's MIT licence.

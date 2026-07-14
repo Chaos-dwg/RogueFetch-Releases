@@ -1,8 +1,8 @@
-FFmpeg bundled with MediaGrabber
+FFmpeg bundled with RogueFetch
 ================================
 
-MediaGrabber bundles unmodified FFmpeg binaries. FFmpeg is executed as a separate
-process; none of the FFmpeg libraries are linked into MediaGrabber.
+RogueFetch bundles unmodified FFmpeg binaries. FFmpeg is executed as a separate
+process; none of the FFmpeg libraries are linked into RogueFetch.
 
 Build name        : ffmpeg-n7.1.5-2-g998de74adf-win64-lgpl-shared-7.1
 FFmpeg version    : n7.1.5-2-g998de74adf-20260713
@@ -33,10 +33,10 @@ The complete corresponding source for the FFmpeg libraries in this build:
   Build scripts and   : https://github.com/BtbN/FFmpeg-Builds
   configuration         at release tag autobuild-2026-07-13-14-11
 
-Both are also published as assets on the MediaGrabber release that ships this
+Both are also published as assets on the RogueFetch release that ships this
 build, so the source remains available even if the upstream locations change:
 
-  https://github.com/Chaos-dwg/MediaGrabber-Releases/releases
+  https://github.com/Chaos-dwg/RogueFetch-Releases/releases
 
 The exact ./configure line used is reproduced by running:
 
@@ -46,5 +46,5 @@ Replacing the FFmpeg libraries
 ------------------------------
 The FFmpeg libraries are shipped as DLLs alongside ffmpeg.exe. To use your own
 build of FFmpeg, replace the av*/sw* DLLs and ffmpeg.exe / ffprobe.exe in this
-directory with your own compatible versions. Nothing in MediaGrabber prevents
-this, and no relinking of MediaGrabber is required.
+directory with your own compatible versions. Nothing in RogueFetch prevents
+this, and no relinking of RogueFetch is required.
