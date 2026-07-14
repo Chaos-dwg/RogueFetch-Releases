@@ -2,7 +2,7 @@
 
 Public distribution point for compiled **MediaGrabber** releases, by [Rogue Gain](https://roguegain.com).
 
-> **This repository contains release binaries only.**
+> **This repository contains release binaries and licence/source material only.**
 > MediaGrabber's application source code is **not** published here.
 
 **→ [Get the latest release](https://github.com/Chaos-dwg/MediaGrabber-Releases/releases/latest)**
@@ -16,7 +16,7 @@ link, check what it found, choose an output, and let the queue run — no comman
 and no separate FFmpeg install.
 
 - **Audio:** MP3, WAV, FLAC, M4A, Opus, AAC — with selectable bitrate
-- **Video:** MP4, MKV, WebM — up to 4K
+- **Video:** MP4, MKV, WebM
 - Metadata preview, download queue, live progress, history, and a native Save As for
   every download
 - **FFmpeg is bundled** — it is never taken from your PATH
@@ -30,8 +30,8 @@ and no separate FFmpeg install.
 
 | | |
 |---|---|
-| **Installer** (recommended) | `MediaGrabber-1.0.0-Setup.exe` — per-user install, no admin rights, Start Menu shortcut, clean uninstall |
-| **Portable** | `MediaGrabber-1.0.0-portable-win64.zip` — unzip anywhere and run `MediaGrabber.exe` |
+| **Installer** (recommended) | `MediaGrabber-1.0.1-Setup.exe` — per-user install, no admin rights, Start Menu shortcut, clean uninstall |
+| **Portable** | `MediaGrabber-1.0.1-portable-win64.zip` — unzip anywhere and run `MediaGrabber.exe` |
 | **Checksums** | `SHA256SUMS.txt` |
 
 ## Code signing
@@ -44,17 +44,43 @@ of the build not carrying a code-signing certificate, not an indication that any
 is wrong with it.
 
 Because the builds are unsigned, **verifying the checksum is the meaningful integrity
-check.** Do it.
-
-## Verify your download
-
-Compare the hash of the file you downloaded against the value in `SHA256SUMS.txt`:
+check.** Do it:
 
 ```powershell
-Get-FileHash .\MediaGrabber-1.0.0-Setup.exe -Algorithm SHA256
+Get-FileHash .\MediaGrabber-1.0.1-Setup.exe -Algorithm SHA256
 ```
 
-If the hash does not match, do not run the file.
+Compare the result against `SHA256SUMS.txt`. If it does not match, do not run the file.
+
+## Bundled FFmpeg, and its source
+
+MediaGrabber bundles **FFmpeg** under the **LGPL v3**. It executes `ffmpeg.exe` as a
+separate process and links no FFmpeg library into itself.
+
+| | |
+|---|---|
+| Build | `ffmpeg-n7.1.5-2-g998de74adf-win64-lgpl-shared-7.1` |
+| Upstream | FFmpeg `release/7.1`, commit [`998de74adf`](https://github.com/FFmpeg/FFmpeg/commit/998de74adf861c26df557e220996faa959419549) |
+| Licence | LGPL-3.0-or-later — see [FFmpeg-LICENSE-LGPLv3.txt](FFmpeg-LICENSE-LGPLv3.txt) |
+| Builder | [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds), pinned to release tag `autobuild-2026-07-13-14-11` |
+
+This is an **LGPL** build: configured *without* `--enable-gpl`, so the GPL-only
+components (libx264, libx265, libxvid and others) are disabled. The FFmpeg libraries
+ship as **separate DLLs**, so you can replace them with your own compatible build by
+swapping the files in the `bin` folder — no relinking of MediaGrabber is required.
+
+**Corresponding source is published with every release** that ships these binaries:
+
+- `ffmpeg-source-998de74adf.tar.gz` — the exact FFmpeg source
+- `ffmpeg-build-scripts-BtbN-autobuild-2026-07-13-14-11.tar.gz` — the build scripts and configuration
+
+Full details, including the exact `./configure` line and the SHA-256 of the archive the
+binaries came from, are in [FFMPEG_BUILD_INFO.txt](FFMPEG_BUILD_INFO.txt).
+
+## Licensing
+
+MediaGrabber is released under the **MIT License** — see [LICENSE](LICENSE).
+Third-party components are listed in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt).
 
 ## Responsible use
 
@@ -66,9 +92,13 @@ MediaGrabber does not bypass access controls and does not support DRM-protected
 streams. Sign-in-required, region-locked, or bot-blocked content cannot be
 circumvented.
 
-## Licensing
+## Release history
 
-MediaGrabber itself is MIT-licensed. The bundled FFmpeg is a GPL build.
+**v1.0.0 was withdrawn** and is not available for download. It bundled a GPL FFmpeg
+build whose exact corresponding source could not afterwards be established, and it
+shipped without the required licence text and source offer. v1.0.1 replaces it with
+the pinned LGPL build described above, shipped with its full licence text and
+corresponding source. Please use v1.0.1.
 
 ## Links
 

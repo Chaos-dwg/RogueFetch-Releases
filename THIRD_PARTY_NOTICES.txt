@@ -1,0 +1,87 @@
+MediaGrabber - Third-Party Notices
+==================================
+
+MediaGrabber is licensed under the MIT License. See LICENSE.
+
+MediaGrabber redistributes the third-party components listed below. Each remains
+under its own licence. Full licence texts for the redistributed binaries are in
+the "legal" folder that ships with the application.
+
+
+1. FFmpeg  (redistributed as binaries)
+--------------------------------------
+Project   : FFmpeg - https://ffmpeg.org/
+Licence   : GNU Lesser General Public License, version 3 (LGPL-3.0-or-later)
+Full text : legal/FFmpeg-LICENSE-LGPLv3.txt
+Copyright : Copyright (c) 2000-2026 the FFmpeg developers
+
+Bundled build:
+  ffmpeg-n7.1.5-2-g998de74adf-win64-lgpl-shared-7.1
+  FFmpeg version n7.1.5-2-g998de74adf-20260713
+  Upstream commit 998de74adf (FFmpeg release/7.1 branch)
+
+This is an LGPL build. It is configured WITHOUT --enable-gpl, and the GPL-only
+components (libx264, libx265, libxvid, libxavs2, libdavs2, frei0r,
+librubberband, libvidstab, avisynth) are disabled. It is configured with
+--enable-version3, which makes the applicable licence LGPL version 3.
+
+The FFmpeg binaries are UNMODIFIED. MediaGrabber runs ffmpeg.exe as a separate
+process and does not link any FFmpeg library into itself.
+
+The FFmpeg libraries are shipped as separate DLLs (a "shared" build), so you can
+replace them with your own build simply by swapping the files in the bin folder.
+No relinking of MediaGrabber is required.
+
+Corresponding source, and the build scripts and configuration used to produce
+these binaries, are published as assets on the MediaGrabber release that ships
+this build:
+
+  https://github.com/Chaos-dwg/MediaGrabber-Releases/releases
+
+and upstream at:
+
+  FFmpeg source : https://github.com/FFmpeg/FFmpeg  (commit 998de74adf)
+  Build scripts : https://github.com/BtbN/FFmpeg-Builds
+                  (release tag autobuild-2026-07-13-14-11)
+
+Full build details, including the exact ./configure line and the SHA-256 of the
+archive the binaries were taken from, are in legal/FFMPEG_BUILD_INFO.txt. You can
+also reproduce the configure line by running: ffmpeg.exe -version
+
+
+2. yt-dlp
+---------
+Project : yt-dlp - https://github.com/yt-dlp/yt-dlp
+Licence : The Unlicense (public domain dedication)
+Bundled as a Python dependency inside the packaged application.
+
+
+3. PySide6 / Qt
+---------------
+Project : Qt for Python (PySide6) - https://www.qt.io/qt-for-python
+Licence : LGPL v3 (also available under the GPL and a commercial licence)
+Copyright : Copyright (c) The Qt Company Ltd.
+
+PySide6 and the Qt libraries are used as dynamically-linked libraries and are
+shipped as separate DLLs, consistent with the LGPL. They can be replaced with
+compatible versions without relinking MediaGrabber.
+
+
+4. Requests
+-----------
+Project : Requests - https://requests.readthedocs.io/
+Licence : Apache License 2.0
+
+
+5. Other transitive dependencies
+--------------------------------
+The packaged application includes libraries pulled in by the above, each under
+its own licence - for example urllib3 (MIT), certifi (MPL 2.0), mutagen
+(GPL-2.0-or-later, used by yt-dlp), charset-normalizer (MIT), idna (BSD), and
+brotli (MIT). Consult each project for its full licence text.
+
+
+6. Application icon
+-------------------
+The MediaGrabber icon is generated programmatically by the project's own build
+script and is covered by MediaGrabber's MIT licence.

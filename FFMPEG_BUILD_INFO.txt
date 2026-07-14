@@ -1,0 +1,50 @@
+FFmpeg bundled with MediaGrabber
+================================
+
+MediaGrabber bundles unmodified FFmpeg binaries. FFmpeg is executed as a separate
+process; none of the FFmpeg libraries are linked into MediaGrabber.
+
+Build name        : ffmpeg-n7.1.5-2-g998de74adf-win64-lgpl-shared-7.1
+FFmpeg version    : n7.1.5-2-g998de74adf-20260713
+Upstream commit   : 998de74adf  (FFmpeg release/7.1 branch)
+Licence           : LGPL-3.0-or-later  (LGPL v3 or later)
+Linkage           : shared libraries (DLLs), so they can be replaced by the user
+
+Binary origin
+-------------
+Prebuilt by the BtbN FFmpeg-Builds project, pinned to a specific release:
+
+  Release tag : autobuild-2026-07-13-14-11
+  Archive     : ffmpeg-n7.1.5-2-g998de74adf-win64-lgpl-shared-7.1.zip
+  URL         : https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2026-07-13-14-11/ffmpeg-n7.1.5-2-g998de74adf-win64-lgpl-shared-7.1.zip
+  SHA-256     : 6e3fcd3c40e4f66806d5249fe784eaf3a789f1f2d4859662a2b8c05d8fd624fc
+
+This build is configured WITHOUT --enable-gpl. The GPL-only components (libx264,
+libx265, libxvid, libxavs2, libdavs2, frei0r, librubberband, libvidstab,
+avisynth) are explicitly disabled. It IS configured with --enable-version3, which
+makes the applicable licence LGPL version 3.
+
+Corresponding source
+--------------------
+The complete corresponding source for the FFmpeg libraries in this build:
+
+  FFmpeg source       : https://github.com/FFmpeg/FFmpeg
+                        commit 998de74adf
+  Build scripts and   : https://github.com/BtbN/FFmpeg-Builds
+  configuration         at release tag autobuild-2026-07-13-14-11
+
+Both are also published as assets on the MediaGrabber release that ships this
+build, so the source remains available even if the upstream locations change:
+
+  https://github.com/Chaos-dwg/MediaGrabber-Releases/releases
+
+The exact ./configure line used is reproduced by running:
+
+  ffmpeg.exe -version
+
+Replacing the FFmpeg libraries
+------------------------------
+The FFmpeg libraries are shipped as DLLs alongside ffmpeg.exe. To use your own
+build of FFmpeg, replace the av*/sw* DLLs and ffmpeg.exe / ffprobe.exe in this
+directory with your own compatible versions. Nothing in MediaGrabber prevents
+this, and no relinking of MediaGrabber is required.
